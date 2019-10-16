@@ -3,12 +3,11 @@ services:
 
   apache:
     build: .
-    # image: php:7.2-apache
-    # container_name: apache_web
+    ports:
+      - 8081:80
     volumes:
       - ./:/var/www/html
-    ports:
-      - '8081:80'
+
   pma:
     image: phpmyadmin/phpmyadmin
     ports:
